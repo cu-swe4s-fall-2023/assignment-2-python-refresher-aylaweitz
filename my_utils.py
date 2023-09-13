@@ -1,5 +1,5 @@
-def get_column(file_name, query_column, query_value, result_column):
-    """Return array of reult_column values for each row in file_name has query_value in query_column.
+def get_column(file_name, query_column, query_value, result_column=1):
+    """Return array of result_column values for each row in file_name has query_value in query_column.
 
     Parameters
     ----------
