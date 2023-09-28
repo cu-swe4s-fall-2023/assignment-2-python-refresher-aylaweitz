@@ -47,7 +47,7 @@ def open_file(file_name):
         name of file
     
     Returns: <class '_io.TextIOWrapper'>
-
+        file that can be read.rup
     """
     try:
         f = open(file_name, 'r')

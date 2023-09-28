@@ -28,5 +28,9 @@ parser.add_argument('--file_name', # 'Agrofood_co2_emission.csv'
 
 args = parser.parse_args()
 
-fires = get_column(args.file_name, args.country_column, args.country, args.fires_column)
-print(fires)
+def main():
+    fires = get_column(args.file_name, args.country_column, args.country, args.fires_column)
+    print(fires)
+
+if __name__ == '__main__':
+    main()
