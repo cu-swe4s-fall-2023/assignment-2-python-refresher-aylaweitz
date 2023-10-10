@@ -148,5 +148,5 @@ def calc_std(a_list):
     the_sum = 0
     for i in a_list:
         the_sum += (i - mu)**2
-    std = np.sqrt(the_sum / len(a_list))
+    std = (the_sum / len(a_list))**(1/2)
     return std
