@@ -79,3 +79,74 @@ def convert_to_int(value):
         print('Value given could not be converted to an integer. Try a different column.')
         sys.exit(2)
 
+
+def calc_mean(a_list):
+    """Calculate the mean of a list of integers
+
+    Parameters
+    ----------
+    a_list: list
+        list of integers
+
+    Returns
+    -------
+    mean: float
+        mean value of the list provided
+    """
+    try:
+        iter(a_list)
+    except TypeError:
+        print('Input is not iterable -- cannot calculate mean')
+        sys.exit(4)
+
+    # doing this without numpy
+    mean = sum(a_list)/len(a_list)
+    return mean
+
+def calc_median(a_list):
+    """Calculate the median of a list of integers
+
+    Parameters
+    ----------
+    a_list: lst
+        list of integers
+
+    Returns
+    -------
+    median: float
+        median value of the list provided
+    """
+    try:
+        iter(a_list)
+    except TypeError:
+        print('Input is not iterable -- cannot calculate median')
+        sys.exit(4)
+
+    median = a_list[len(a_list)//2] # will force middle value
+    return median
+
+def calc_std(a_list):
+    """Calculate the standard deviation of a list of integers
+
+    Parameters
+    ----------
+    a_list: lst
+        list of integers
+
+    Returns
+    -------
+    std: float
+        standard deviation of the list provided
+    """
+    try:
+        iter(a_list)
+    except TypeError:
+        print('Input is not iterable -- cannot calculate standard deviation')
+        sys.exit(4)
+
+    mu = calc_mean(a_list)
+    the_sum = 0
+    for i in a_list:
+        the_sum += (i - mu)**2
+    std = (the_sum / len(a_list))**(1/2)
+    return std
