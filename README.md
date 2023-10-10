@@ -24,3 +24,5 @@ python print_fires.py --file_name <FILENAME> --country <COUNTRY> --country_colum
 where `OPERATION` can take values "mean", "median", or "std"/"standard deviation" and it will perform that operation. If no value is given for `OPERATION`, the call will return the list of integers with no operation preformed.
 
 In our case, we are interested in the number of fires in the U.S. so `COUNTRY` = "United States of America", `COUNTRY_COLUMN` = 0, and `FIRES_COLUMN` = 3. These values are the default.
+
+*Note*: unit and functional tests and style checks are run before any branch is pushed or any pull request is made on the main branch.

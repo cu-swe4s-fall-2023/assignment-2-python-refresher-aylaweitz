@@ -20,5 +20,5 @@ run return_std python $path/print_fires.py --file_name '../test_data.csv' --oper
 assert_exit_code 0
 
 # run units tests in test_my_utils.py
-run test_utils python test_my_utils.py
-assert_exit_code 0
+# run test_utils python test_my_utils.py
+# assert_exit_code 0
