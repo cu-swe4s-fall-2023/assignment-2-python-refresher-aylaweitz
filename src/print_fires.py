@@ -1,5 +1,6 @@
 import my_utils
 import argparse
+import sys
 
 parser = argparse.ArgumentParser(description='Pass in parameters for fire search.')
 
@@ -28,7 +29,7 @@ parser.add_argument('--file_name', # 'Agrofood_co2_emission.csv'
 
 parser.add_argument('--operation',
                     type=str, 
-                    default=None
+                    default=None,
                     help='Operation to implement (mean/median/standard deviation)', 
                     required=False)
 
@@ -39,11 +40,15 @@ def main():
 
     if args.operation: # if an operation is given
         if args.operation == 'mean':
-            my_utils.calc_mean(fires)
+            print(f'Mean: {my_utils.calc_mean(fires)}')
         elif args.operation == 'median':
-            my_utils.calc_median(fires)
+            print(f'Median: {my_utils.calc_median(fires)}')
         elif args.operation == 'standard deviation' or args.operation == 'std':
-            my_utils.calc_std(fires)
+            print(f'Std: {my_utils.calc_std(fires)}')
+
+        else:
+            print(f'"{args.operation}" is an unrecognized operation name. Try something else.')
+            sys.exit(5)
 
     else:
         print(fires)
