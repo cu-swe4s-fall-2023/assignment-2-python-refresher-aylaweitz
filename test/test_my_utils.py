@@ -1,6 +1,7 @@
 import unittest
 import sys
-import src/my_utils
+sys.path.insert(0, '../src')
+import my_utils
 
 
 class TestCalc(unittest.TestCase):
