@@ -1,6 +1,6 @@
 import unittest
 import sys
-from src import my_utils
+import src/my_utils
 
 
 class TestCalc(unittest.TestCase):
