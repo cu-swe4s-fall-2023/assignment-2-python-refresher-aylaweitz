@@ -1,8 +1,10 @@
 import math
 import sys
 
+
 def get_column(file_name, query_column, query_value, result_column=1):
-    """Return array of result_column values for each row in file_name has query_value in query_column.
+    """Return array of result_column values for each row
+      in file_name has query_value in query_column.
 
     Parameters
     ----------
@@ -21,22 +23,23 @@ def get_column(file_name, query_column, query_value, result_column=1):
     Returns
     -------
     result_array: lst
-        values of result_column from rows that contain query_value in query_column.
+        values of result_column from rows that contain
+          query_value in query_column.
     """
     f = open_file(file_name)
 
     result_array = []
-    for l in f:
-        line = l.rstrip().split(',')
-        
-        if line[query_column] == query_value:
-            value = line[result_column]
-            int_value = convert_to_int(value) # convert value read in to integer
+    for line in f:
+        split_line = line.rstrip().split(',')
+        if split_line[query_column] == query_value:
+            value = split_line[result_column]
+            int_value = convert_to_int(value)  # convert to int
             result_array.append(int_value)
 
     f.close()
 
     return result_array
+
 
 def open_file(file_name):
     """Open the file and return it as a readable object.
@@ -45,8 +48,10 @@ def open_file(file_name):
     ----------
     file_name: str
         name of file
-    
-    Returns: <class '_io.TextIOWrapper'>
+
+    Returns
+    -------
+    <class '_io.TextIOWrapper'>
         file that can be read.rup
     """
     try:
@@ -55,7 +60,6 @@ def open_file(file_name):
     except FileNotFoundError:
         print('Could not find: ' + file_name)
         sys.exit(3)
-
 
 
 def convert_to_int(value):
@@ -76,7 +80,7 @@ def convert_to_int(value):
         return int_elem
 
     except ValueError:
-        print('Value given could not be converted to an integer. Try a different column.')
+        print('Value given could not be converted to an integer.')
         sys.exit(2)
 
 
@@ -103,6 +107,7 @@ def calc_mean(a_list):
     mean = sum(a_list)/len(a_list)
     return mean
 
+
 def calc_median(a_list):
     """Calculate the median of a list of integers
 
@@ -122,8 +127,9 @@ def calc_median(a_list):
         print('Input is not iterable -- cannot calculate median')
         sys.exit(4)
 
-    median = a_list[len(a_list)//2] # will force middle value
+    median = a_list[len(a_list)//2]  # will force middle value
     return median
+
 
 def calc_std(a_list):
     """Calculate the standard deviation of a list of integers
