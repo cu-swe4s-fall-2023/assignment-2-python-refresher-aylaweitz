@@ -2,9 +2,11 @@ import my_utils
 import argparse
 import matplotlib.pyplot as plt
 
+saving_path = '../doc/'
+
 
 def create_fire_hist(file_name='../Agrofood_co2_emission.csv',
-                     outfile='../doc/fire_hist.jpg'):
+                     outfile='fire_hist.jpg'):
     forest_fires = my_utils.get_column(file_name,
                                        query_column=0,
                                        query_value="United States of America",
@@ -22,11 +24,11 @@ def create_fire_hist(file_name='../Agrofood_co2_emission.csv',
     ax.set_ylabel('Frequency')
     ax.set_title('Fires in the U.S.')
     plt.legend()
-    plt.savefig(outfile, bbox_inches='tight')
+    plt.savefig(saving_path+outfile, bbox_inches='tight')
 
 
 def create_forest_v_savanna_scatter(file_name='../Agrofood_co2_emission.csv',
-                                    outfile='../doc/forest_v_savanna.jpg'):
+                                    outfile='forest_v_savanna.jpg'):
     forest_fires = my_utils.get_column(file_name,
                                        query_column=0,
                                        query_value="United States of America",
@@ -43,11 +45,11 @@ def create_forest_v_savanna_scatter(file_name='../Agrofood_co2_emission.csv',
     ax.set_xlabel('Number of Savanna Fires')
     ax.set_ylabel('Number of Forest Fires')
     ax.set_title('Forest fires vs. Savanna Fires in the U.S.')
-    plt.savefig(outfile, bbox_inches='tight')
+    plt.savefig(saving_path+outfile, bbox_inches='tight')
 
 
 def create_fire_v_year_scatter(file_name='../Agrofood_co2_emission.csv',
-                               outfile='../doc/forest_v_year.jpg'):
+                               outfile='forest_v_year.jpg'):
     forest_fires = my_utils.get_column(file_name,
                                        query_column=0,
                                        query_value="United States of America",
@@ -69,7 +71,7 @@ def create_fire_v_year_scatter(file_name='../Agrofood_co2_emission.csv',
     ax.set_ylabel('Number of Forest Fires')
     ax.set_title('Number of Forest Fires over the Years in the U.S.')
     plt.legend()
-    plt.savefig(outfile, bbox_inches='tight')
+    plt.savefig(saving_path+outfile, bbox_inches='tight')
 
 
 def main():
