@@ -5,55 +5,22 @@ import matplotlib.pyplot as plt
 
 def create_fire_hist(file_name='../Agrofood_co2_emission.csv',
                      outfile='../doc/fire_hist.jpg'):
-    
     forest_fires = my_utils.get_column(file_name,
                                        query_column=0,
                                        query_value="United States of America",
                                        result_column=3)
-    
-    
     fig, ax = plt.subplots()
     ax.hist(forest_fires)
     ax.spines['top'].set_visible(False)
-    ax.spines['right'].set_visible(False)
+    ax.spines['right'].set_visible(False)  # noqa
     ax.set_xlabel('Number of Forest Fires in a Year')
     ax.set_ylabel('Frequency')
     ax.set_title('Forest fires in the U.S.')
     plt.savefig(outfile, bbox_inches='tight')
-
-
-def create_fire_v_year_scatter(file_name='../Agrofood_co2_emission.csv',
-                               outfile='hi.jpg'):
-    
-    years = my_utils.get_column(file_name,
-                                query_column=0,
-                                query_value="United States of America",
-                                result_column=1)  # year column
-    
-    forest_fires = my_utils.get_column(file_name,
-                                        query_column=0,
-                                        query_value="United States of America",
-                                        result_column=3)  # forest fires column
-    
-    savanna_fires = my_utils.get_column(file_name,
-                                        query_column=0,
-                                        query_value="United States of America",
-                                        result_column=3)  #  column
-    
-    fig, ax = plt.subplots()
-    ax.hist(data)
-    ax.spines['top'].set_visible(False)
-    ax.spines['right'].set_visible(False)
-    ax.set_xlabel('')
-    ax.set_ylabel('')
-    ax.set_title('hi')
-
-    # plt.savefig(out_file, bbox_inches='tight')
-    plt.show()
     
 
 def create_forest_v_savanna_scatter(file_name='../Agrofood_co2_emission.csv',
-                               outfile='../doc/forest_v_savanna.jpg'):
+                                    outfile='../doc/forest_v_savanna.jpg'):
     
     forest_fires = my_utils.get_column(file_name,
                                        query_column=0,
@@ -61,10 +28,9 @@ def create_forest_v_savanna_scatter(file_name='../Agrofood_co2_emission.csv',
                                        result_column=3)  # forest fires
 
     savanna_fires = my_utils.get_column(file_name,
-                                       query_column=0,
-                                       query_value="United States of America",
-                                       result_column=2)  # savanna fires
-    
+                                        query_column=0,
+                                        query_value="United States of America",
+                                        result_column=2)  # savanna fires
     fig, ax = plt.subplots()
     ax.scatter(savanna_fires, forest_fires)
     ax.spines['top'].set_visible(False)
@@ -82,12 +48,10 @@ def create_fire_v_year_scatter(file_name='../Agrofood_co2_emission.csv',
                                        query_column=0,
                                        query_value="United States of America",
                                        result_column=3)  # forest fires
-
     years = my_utils.get_column(file_name,
-                                       query_column=0,
-                                       query_value="United States of America",
-                                       result_column=1)  # savanna fires
-    
+                                query_column=0,
+                                query_value="United States of America",
+                                result_column=1)  # savanna fires
     fig, ax = plt.subplots()
     ax.scatter(years, forest_fires)
     ax.spines['top'].set_visible(False)
