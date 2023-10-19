@@ -1,5 +1,7 @@
 # snakemake file
 
+IMAGES = ["fire_hist", "forest_v_savanna", "forest_v_year"]
+
 rule all:
   input:
     '../doc/fire_hist.jpg'
@@ -14,6 +16,6 @@ rule plot_data:
     input:
       '../Agrofood_co2_emission.csv'
     output:
-      exapnd('../doc/fire_hist.jpg', '../doc/forest_v_savanna.jpg', '../doc/forest_v_year.jpg')
+      expand('../doc/{image}.jpg', image=IMAGES)
     shell:
       'python plotting.py'
