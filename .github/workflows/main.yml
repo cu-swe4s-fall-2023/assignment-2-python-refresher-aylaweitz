@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # - uses: conda-incubator/setup-miniconda@v2
-      - uses: conda-incubator/setup-micromamba@v2
+      - uses: mamba-org/setup-micromamba@v1
         with:
           activate-environment: env
           environment-file: env.yml
@@ -27,7 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # - uses: conda-incubator/setup-miniconda@v2
-      - uses: conda-incubator/setup-micromamba@v2
+      - uses: mamba-org/setup-micromamba@v1
         with:
           activate-environment: env
           environment-file: env.yml
@@ -40,7 +40,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       # - uses: conda-incubator/setup-miniconda@v2
-      - uses: conda-incubator/setup-micromamba@v2
+      - uses: mamba-org/setup-micromamba@v1
         with:
           activate-environment: env
           environment-file: env.yml
