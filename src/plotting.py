@@ -17,11 +17,10 @@ def create_fire_hist(file_name='../Agrofood_co2_emission.csv',
     ax.set_ylabel('Frequency')
     ax.set_title('Forest fires in the U.S.')
     plt.savefig(outfile, bbox_inches='tight')
-    
+
 
 def create_forest_v_savanna_scatter(file_name='../Agrofood_co2_emission.csv',
                                     outfile='../doc/forest_v_savanna.jpg'):
-    
     forest_fires = my_utils.get_column(file_name,
                                        query_column=0,
                                        query_value="United States of America",
@@ -43,7 +42,6 @@ def create_forest_v_savanna_scatter(file_name='../Agrofood_co2_emission.csv',
 
 def create_fire_v_year_scatter(file_name='../Agrofood_co2_emission.csv',
                                outfile='../doc/forest_v_year.jpg'):
-    
     forest_fires = my_utils.get_column(file_name,
                                        query_column=0,
                                        query_value="United States of America",
