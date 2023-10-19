@@ -7,7 +7,7 @@ In this project, we investigate the number of forest and savanna fires in the Un
 ## Results
 We find a positive correlation between forest and savanna fires in the U.S, and that there were consistently more forest fires than savanna fires in the years 1990-2000. We also find that the mean number of forest fires that occur in a year in the U.S. is approximately 1929 fires while the mean number of savanna fires is 1393. While there are some years where there were significantly more forest fires than average, the number of forest and savanna fires in a year hasn't dramatically increased in the U.S. from 1990 to 2020.
 
-##Methods
+## Methods
 To obtain these results, we plotted the number of number of forest fires vs. the number of savanna fires in a year (see fire_hist.jpg). We also plotted the number of forest fires as a function of the number of savanna fires (see fores_v_savanna.jpg). We plotted the number of forest and savanna fires as a function of year (see forest_v_year.jpg).
 
 
