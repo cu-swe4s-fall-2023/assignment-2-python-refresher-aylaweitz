@@ -2,18 +2,18 @@
 
 rule all:
   input:
-    "foo.png"
+    '../doc/fire_hist.jpg'
 
-rule A:
-  input:
-    "foo.txt",
+rule download_data:
   output:
-    "foo.png"
+    '../Agrofood_co2_emission.csv'
   shell:
-    "python " + "plot.py foo.txt foo.png"
+    'wget -O {output} "https://docs.google.com/uc?export=download&id=1Wytf3ryf9EtOwaloms8HEzLG0yjtRqxr"'
 
-rule B:
-  output:
-    "foo.txt"
-  shell:
-    "seq 1 100 > foo.txt"
+rule plot_data:
+    input:
+      '../Agrofood_co2_emission.csv'
+    output:
+      exapnd('../doc/fire_hist.jpg', '../doc/forest_v_savanna.jpg', '../doc/forest_v_year.jpg')
+    shell:
+      'python plotting.py'

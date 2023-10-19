@@ -3,6 +3,7 @@ test -e ssshtest || wget -q https://raw.githubusercontent.com/ryanlayer/ssshtest
 . ssshtest
 
 path='../src'
+fig_path='../doc'
 
 run basic_test python $path/print_fires.py --file_name '../test_data.csv'
 assert_exit_code 0
@@ -19,6 +20,6 @@ assert_exit_code 0
 run return_std python $path/print_fires.py --file_name '../test_data.csv' --operation "std"
 assert_exit_code 0
 
-# run units tests in test_my_utils.py
-# run test_utils python test_my_utils.py
-# assert_exit_code 0
+# plotting histogram
+run plotting_hist python $path/plotting.py
+assert_equal $fig_path/fire_hist.jpg $( ls $fire_hist.jpg )
