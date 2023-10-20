@@ -22,4 +22,4 @@ assert_exit_code 0
 
 # plotting histogram
 run plotting_hist python $path/plotting.py
-assert_equal $fig_path/fire_hist.jpg $( ls $fire_hist.jpg )
+assert_equal $fig_path/fire_hist.jpg $( ls $fig_path/fire_hist.jpg )

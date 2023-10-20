@@ -45,5 +45,6 @@ jobs:
           activate-environment: env
           environment-file: env.yml
       - run: |
+          pip install matplotlib
           cd test
           bash test_print_fires.sh
